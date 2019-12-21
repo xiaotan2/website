@@ -1,20 +1,28 @@
-import { Component, OnDestroy, OnInit} from '@angular/core';
+import { Component, OnDestroy, ElementRef, AfterViewInit, OnInit, ViewChild} from '@angular/core';
+import * as M from "materialize-css/dist/js/materialize";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, OnDestroy{
+
+export class AppComponent implements OnInit, AfterViewInit, OnDestroy{
   title = 'learn';
   showMenu = false;
   darkModeActive: boolean;
 
   userEmail = '';
 
+  @ViewChild('modal', {static: false}) elModal: ElementRef;
+
   constructor() {}
 
   ngOnInit() {}
+
+  ngAfterViewInit() {
+    let instanceModal = new M.Modal(this.elModal.nativeElement, {});
+  }
 
   toggleMenu() {
     this.showMenu = !this.showMenu;

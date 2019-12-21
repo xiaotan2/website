@@ -1,0 +1,13 @@
+<div class="container" *ngFor="let event of eventlist; let i = index">
+    <ul class="timeline"> 
+    <li class="timeline-blocks">
+    <figure class="timeline-icon">
+    <img src="https://firebasestorage.googleapis.com/v0/b/honeyforever-f38e4.appspot.com/o/icon%2Fheart-icon-png-minimalist-7-original.png?alt=media&token=5efd847b-36c8-4d26-bc81-f283c64154c5" alt="timeline" />
+    </figure>
+    <div class="dir-r radius-3">
+        <app-event [eventInput]=event></app-event>
+    </div>
+    <div class="date-l">{{datelist[i]}}</div>
+    </li>
+    </ul>
+</div>

@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig : {
+    apiKey: "AIzaSyDxkGU7DJZCxOvtpNYsja2rlrV8hSpK1Hc",
+    authDomain: "honeyforever-f38e4.firebaseapp.com",
+    databaseURL: "https://honeyforever-f38e4.firebaseio.com",
+    projectId: "honeyforever-f38e4",
+    storageBucket: "honeyforever-f38e4.appspot.com",
+    messagingSenderId: "851294290094",
+    appId: "1:851294290094:web:188ffab43116d3d324ed3f",
+    measurementId: "G-ZYM0869B50"
+  }
 };
 
 /*
