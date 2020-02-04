@@ -34,7 +34,9 @@ export class FirestoreService {
     }
 
     getEventsFromDb() {
-        return this.firestore.collection(this.collectionName).snapshotChanges();
+        return this.firestore
+                   .collection(this.collectionName, ref => ref.orderBy("date", "desc"))
+                   .snapshotChanges();
     }
 
     updateEvent(data) {

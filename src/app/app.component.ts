@@ -1,4 +1,5 @@
 import { Component, OnDestroy, ElementRef, AfterViewInit, OnInit, ViewChild} from '@angular/core';
+import { AuthService  } from './shared/auth.service'
 import * as M from "materialize-css/dist/js/materialize";
 
 @Component({
@@ -16,9 +17,12 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy{
 
   @ViewChild('modal', {static: false}) elModal: ElementRef;
 
-  constructor() {}
+  constructor(private authService : AuthService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    // By default sign in user anonymously
+    this.authService.signInAnonymously();
+  }
 
   ngAfterViewInit() {
     let instanceModal = new M.Modal(this.elModal.nativeElement, {});
